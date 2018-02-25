@@ -4,7 +4,7 @@ A TCP Libary
 Usage =>
 
 First you have to setup the events =>
-SharpNetworking.Initialize(OnMessageReceived, OnClientConnected, OnClientDisconnected, OnNetworkEvent);//Create the functions your self
+ SharpNetworking.Initialize(OnMessageReceived, OnClientConnected, OnClientDisconnected, OnNetworkEvent);//Create the functions your self
 
 void OnMessageReceived(SharpClient sender, int channel, byte[] rawData)
 void OnClientConnected(SharpClient client)
