@@ -4,31 +4,33 @@ A TCP Libary
 Usage =>
 
 First you have to setup the events =>
+```C#
  SharpNetworking.Initialize(OnMessageReceived, OnClientConnected, OnClientDisconnected, OnNetworkEvent);//Create the functions your self
 
 void OnMessageReceived(SharpClient sender, int channel, byte[] rawData)
 void OnClientConnected(SharpClient client)
 void OnClientDisconnected(SharpClient client)
 void OnNetworkEvent(SharpNetworkEvent e)
-
+```
 
 Server Host =>
-
+```C#
 SharpRoom room = new SharpRoom(RoomName,MaxConnections,Password);//There is more types of create room you can check them all
 HostResult result;
 bool succes = SharpNetworking.Host(PORT, room, out result);
-
+```
 And done.
 
 
 
 
 Client Connect =>
+```C#
 SharpClient me = new SharpClient("Clients name");
 
 ConnectResults result;
 bool isSucces = SharpNetworking.Connect(IP, PORT, "", me, out result);
-
+```
 
 Ta da :P done.
 
@@ -37,14 +39,18 @@ Ta da :P done.
 
 Sending Message =>
 
-
-You can send specific clients, for that you have to create a List<SharpClient> and send as
+```C#
+//You can send specific clients, for that you have to create a List<SharpClient> and send as
 SharpNetworking.SendMessage(Chanel,yourBytes,listyoucreated);
+```
 
 Or can send only one target,
+```C#
 SharpNetworking.SendMessage(Chanel,yourBytes,targetClient);
+```
 
 Or you can use SharpTargets enum
+```C#
     /// Server Broadcast everyone(Including you) and Server Execute it too
     All,
 	
@@ -63,7 +69,7 @@ Or you can use SharpTargets enum
 	
     /// Server Broadcast everyone(Except you) and Server doesn't execute it
     OtherClientsOnly
-
+```
 
 Thats all.
 
