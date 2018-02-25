@@ -26,7 +26,7 @@ And done.
 
 Client Connect =>
 ```C#
-SharpClient me = new SharpClient("Clients name");
+SharpClient me = new SharpClient("Client's name");
 
 ConnectResults result;
 bool isSucces = SharpNetworking.Connect(IP, PORT, "", me, out result);
@@ -76,7 +76,7 @@ Thats all.
 
 
 Every Client has knowladge about other clients.
-Server sends other knowns clients to new client when it connects.
+Server sends other known clients to new client when it connects.
 
 Have fun ^^
 
